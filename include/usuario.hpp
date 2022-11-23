@@ -8,7 +8,6 @@ class Usuario {
         std::string telefone;
         std::string senha;
         std::string email;
-        Endereco endereco;
         std::vector <postagem>;
         int idUsuario;
         int moeda;
