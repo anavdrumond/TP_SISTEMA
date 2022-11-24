@@ -1,5 +1,6 @@
+//USUARIO.HPP
 #include <iostream>
-#include <string>
+#include <vector>
 #include "endereco.hpp"
 
 class Usuario {
@@ -8,7 +9,7 @@ class Usuario {
         std::string telefone;
         std::string senha;
         std::string email;
-        std::vector <postagem>;
+        std::vector <Endereco> post; //duvida
         int idUsuario;
         int moeda;
 
@@ -16,7 +17,6 @@ class Usuario {
         Usuario(std::string _nome, std::string _telefone, std::string _senha, 
         std::string _email, int _idUsuario, int _moeda);
 
-        set_endereco(Endereco _endereco);
-        recebe_postagem(postagem p);
-
+        void set_endereco(Endereco _endereco);
+        void recebe_postagem(Postagem p);
 };

@@ -1,12 +1,17 @@
+//USUARIO.CPP
+
 #include "usuario.hpp"
+#include "endereco.hpp"
 
-Endereco::Endereco (int _cep, std::string _rua, std::string _bairro, 
-    std::string _cidade, std::string _uf, std::string _pais){
+//RESOLVER PARTE DO ENDERECO
+Usuario::Usuario(std::string _nome, std::string _telefone, std::string _senha, 
+        std::string _email, int _idUsuario, int _moeda){
 
-        nome = _nome
+        nome = _nome;
         telefone = _telefone;
         senha = _senha;
         email = _email;
         idUsuario = _idUsuario;
         moeda = _moeda;
     };
+    
