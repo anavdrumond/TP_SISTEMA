@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "endereco.hpp"
+#include "postagem.hpp"
 
 class Usuario {
     private:
