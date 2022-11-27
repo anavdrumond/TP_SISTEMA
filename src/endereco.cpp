@@ -1,6 +1,6 @@
 #include "endereco.hpp"
 
-Endereco::Endereco (int _cep, std::string _rua, std::string _bairro, 
+Endereco::Endereco (std::string _cep, std::string _rua, std::string _bairro, 
     std::string _cidade, std::string _uf){
 
         cep = _cep;
