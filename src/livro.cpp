@@ -4,9 +4,9 @@
 Livro::Livro(std::string nome_, std::string autor_, std::string editora_, std::string condicao_, std::string tipo_, int ano_){
     nome = nome_;
     autor = autor_;
-    autor = autor_;
     editora = editora_;
     condicao = condicao_;
+    tipo = tipo_;
     ano = ano_;
 };
     std::string Livro::get_nome(){

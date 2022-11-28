@@ -1,4 +1,7 @@
 #include <iostream>
+#include <random>
+#include <cstdlib>
+#include <ctime>
 #include "postagem.hpp"
 #include "livro.hpp"
 
@@ -12,3 +15,10 @@ void Postagem::set_livro(Livro l){
     produto = Livro(l.get_nome(), l.get_autor(), l.get_editora(), l.get_condicao(), 
     l.get_tipo(), l.get_ano());
 };
+
+void Postagem::gera_codigo(){
+    
+    unsigned seed = time(0);
+    srand(seed);
+    codigo = 100 + std::rand()%999999;
+}
