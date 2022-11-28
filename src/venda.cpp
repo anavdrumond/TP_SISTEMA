@@ -11,16 +11,14 @@ void Venda::modifica_status(){
 
     status == "vendido";
 }
+
 float Venda::get_preco(){
     return preco;
-
 }
 
 std::string Venda::operacao(Usuario u){
     char op_ = 'v';
-
+    std::cout<<"O preço do livro é R$" + std::to_string(preco);
     u.modifica_carteira(preco,op_);
-    //acessar as moedas do usuario e tirar delas o preço
-    //isso me fez lembrar uma coisa....
-
+    std::cout<< "Compra efetuada com sucesso!"<<std::endl;
 }

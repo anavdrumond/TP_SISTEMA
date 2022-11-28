@@ -9,7 +9,6 @@ class Transacao:public Postagem{
     virtual std::string operacao(Usuario u) = 0;
     void tipo_acordo(char opcao);
     std::string status = "Disponivel para: troca / venda";
-
-    Transacao();
     virtual float get_preco() = 0;
+    Transacao();
 };
