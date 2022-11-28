@@ -12,10 +12,18 @@ Usuario::Usuario(std::string _nome, std::string _telefone, std::string _senha,
         carteira = _carteira;
     };
     
-void modifica_carteira(float valor, char op){
+void Usuario::modifica_carteira(float valor, char op){
 
     //quando tira o valor da carteira e quando adiciona?
     if(op == 'v'){
         carteira -= valor;
     }
+    if(op == 'c'){
+        carteira += valor;
+    }
 };    
+
+void Usuario::recebe_postagem(std::string p){
+    conj_post.push_back(p);
+}
+

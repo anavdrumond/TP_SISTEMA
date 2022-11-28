@@ -11,4 +11,5 @@ class Transacao:public Postagem{
     std::string status = "Disponivel para: troca / venda";
 
     Transacao();
+    virtual float get_preco() = 0;
 };

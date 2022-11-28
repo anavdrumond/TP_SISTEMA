@@ -15,9 +15,8 @@ void Transacao::tipo_acordo(char opcao){
 
         //Troca t;
     }
-
-
-
 };
+
+
 
 //Pensar melhor no status !!!!!!!!!!

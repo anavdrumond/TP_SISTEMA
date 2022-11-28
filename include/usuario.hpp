@@ -12,6 +12,7 @@ class Usuario {
         std::string email;
         std::string rel_cep;
         int idUsuario;
+        float carteira; 
 
         std::vector <std::string> conj_post;
         std::vector <std::string> conj_amigos;
@@ -19,8 +20,6 @@ class Usuario {
     public:
         Usuario(std::string _nome, std::string _telefone, std::string _senha, 
         std::string _email, int _idUsuario, float _carteira);
-
-        float carteira;  
 
         void recebe_postagem(std::string p);
 
