@@ -4,10 +4,6 @@
 #include "venda.hpp"
 #include "troca.hpp"
 
-Transacao::Transacao(){
-   
-};
-
 void Transacao::tipo_acordo(char opcao){
     if(opcao == 'v'){
         Venda v;

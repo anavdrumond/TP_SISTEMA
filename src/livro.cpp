@@ -19,7 +19,7 @@ std::string Livro::get_autor(){
 }
 
 std::string Livro::get_editora(){
-        return editora;
+    return editora;
 }
 
 std::string Livro::get_condicao(){

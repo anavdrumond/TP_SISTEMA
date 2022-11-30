@@ -2,7 +2,7 @@
 
 class Livro{
     private:
-    std::string nome;
+    std::string obra;
     std::string autor;
     std::string editora;
     std::string condicao;
@@ -10,8 +10,9 @@ class Livro{
     int ano;
 
     public:
-    Livro(std::string nome_, std::string autor_, std::string editora_, std::string condicao_, std::string tipo_, int ano_);   
-    std::string get_nome();
+    Livro() = default;
+    Livro(std::string obra_, std::string autor_, std::string editora_, std::string condicao_, std::string tipo_, int ano_);   
+    std::string get_obra();
     std::string get_autor();
     std::string get_editora();
     std::string get_condicao();
