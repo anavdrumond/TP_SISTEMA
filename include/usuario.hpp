@@ -22,9 +22,6 @@ class Usuario {
         std::vector <std::string> conj_amigos;
 
         void recebe_postagem(std::string p);
-        std::string get_idusuario();
-
-        //COLOCAR NA REDE
 
         void modifica_carteira(float valor, char op);
 

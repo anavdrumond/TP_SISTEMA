@@ -2,7 +2,7 @@
 #include "endereco.hpp"
 
 Usuario::Usuario(std::string _nome, std::string _telefone, std::string _senha, 
-        std::string _email, int _idUsuario, float _carteira){
+        std::string _email, std::string _idUsuario, float _carteira){
 
         nome = _nome;
         telefone = _telefone;
