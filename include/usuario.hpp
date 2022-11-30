@@ -23,8 +23,6 @@ class Usuario {
 
         void recebe_postagem(std::string p);
 
-        //COLOCAR NA REDE
-
         void modifica_carteira(float valor, char op);
 
 
