@@ -6,14 +6,15 @@ class Postagem{
     Livro produto;
     std::string descricao;
     std::string apelido;
-    unsigned int codigo;
+    std::string nome_post;
+    std::string categoria;
     
     public:
     float preco;
-    Postagem(std::string apelido_, std::string descricao_, float preco_);
+    Postagem(std::string apelido_, std::string descricao_, float preco_,std::string _cat);
 
     void set_livro(Livro l);
 
-    void gera_codigo();
+    std::string get_categoria();
 
 };
