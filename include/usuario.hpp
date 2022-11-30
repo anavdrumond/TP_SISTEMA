@@ -11,17 +11,20 @@ class Usuario {
         std::string senha;
         std::string email;
         std::string rel_cep;
-        int idUsuario;
+        std::string idUsuario;
         float carteira; 
 
     public:
         Usuario(std::string _nome, std::string _telefone, std::string _senha, 
-        std::string _email, int _idUsuario, float _carteira);
+        std::string _email, std::string _idUsuario, float _carteira);
 
         std::vector <std::string> conj_post;
         std::vector <std::string> conj_amigos;
 
         void recebe_postagem(std::string p);
+        std::string get_idusuario();
+
+        //COLOCAR NA REDE
 
         void modifica_carteira(float valor, char op);
 
