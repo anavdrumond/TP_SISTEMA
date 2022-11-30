@@ -27,3 +27,7 @@ void Usuario::recebe_postagem(std::string p){
     conj_post.push_back(p);
 }
 
+std::string Usuario::get_idusuario(){
+    return idUsuario;
+}
+
