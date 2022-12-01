@@ -1,5 +1,5 @@
 /**
- * @file intruso.hpp
+ * @file endereco.hpp
  * @author Ana Vitoria Drumond (anadrumond@ufmg.br)
  * @brief Classe Endereco
  * @version 1.0
@@ -29,23 +29,31 @@ class Endereco {
         std::string cidade;
 
     /**
+     * @brief Construtor padrão da classe Endereco.
+     */
+    Endereco() = default;    
+
+    /**
      * @brief estado de residencia do usuario. 
      * Aparece em cada post do usuário.
      */
-        std::string uf;
+    std::string uf;
 
-     /**
+    /**
      * @brief Contrutor da calsse Endereco
      * 
-     * @details inicializa a estrutura indices_associacao 
-     * inicializa a estrutura indices_associacao 
-     * com as posições pré-definidas da string de entrada,
-     * indicando os índices de correspondência numérica de
-     * cada letra. Inicialização nula do valor num_senhas.      
-     * 
-     */
-    Endereco() = default;
+     * @details Recebe como parametros cidade e uf,     
+     * que serão preenchidas pelo usuario.
+    */
     Endereco(std::string _cidade, std::string _uf);
+
+    /**
+     * @brief Função para pegar o valor da variavel cidade
+    */
     std::string get_cidade();
+
+    /**
+     * @brief Função para pegar o valor da variavel uf
+     */
     std::string get_uf();
 };

@@ -1,11 +1,10 @@
 /**
- * @file intruso.hpp
+ * @file postagem.hpp
  * @author Ana Vitoria Drumond (anadrumond@ufmg.br)
  * @brief Classe Postagem
  * @version 1.0
  * @date 2022-11-20
- * @details A classe endereco é responsável por armazenar a cidade e o estado
- * do usuário, os quais aparecerão nas postagens e no usuário.
+ * @details A classe postagem....
  *
  * @copyright GNU General Public License v2.0
  * 
@@ -22,7 +21,6 @@ class Postagem{
     std::string apelido;
     std::string nome_post;
     std::string categoria;
-
 
     public:
     float preco;

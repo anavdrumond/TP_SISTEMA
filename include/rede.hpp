@@ -1,11 +1,10 @@
 /**
- * @file intruso.hpp
+ * @file rede.hpp
  * @author Ana Vitoria Drumond (anadrumond@ufmg.br)
  * @brief Classe Rede
  * @version 1.0
  * @date 2022-11-20
- * @details A classe endereco é responsável por armazenar a cidade e o estado
- * do usuário, os quais aparecerão nas postagens e no usuário.
+ * @details A classe rede...
  *
  * @copyright GNU General Public License v2.0
  * 
