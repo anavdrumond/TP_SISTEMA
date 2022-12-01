@@ -18,35 +18,35 @@ void main(){
             //}
             //if(cadastro == 'n'){
                 
-            string nomec;
-            string telefonec;
-            string senhac;
-            string emailc;
-            string cidadec;
-            string ufc;
-            string idUsuarioc;
-            float carteirac = 0;
+        string nomec;
+        string telefonec;
+        string senhac;
+        string emailc;
+        string cidadec;
+        string ufc;
+        string idUsuarioc;
+        float carteirac = 0;
 
-            cout << "Qual é o seu nome ?" << endl;
-            cin >> nomec;
+        cout << "Qual é o seu nome ?" << endl;
+        cin >> nomec;
 
-            cout << "Digite o seu telefone " << endl;
-            cin >> telefonec;
+        cout << "Digite o seu telefone " << endl;
+        cin >> telefonec;
 
-            cout << "Digite o nome da sua cidade " << endl;
-            cin >> cidadec;
+        cout << "Digite o nome da sua cidade " << endl;
+        cin >> cidadec;
 
-            cout << "Qual é a sua Unidade Federativa ?" << endl;
-            cin >> ufc;
+        cout << "Qual é a sua Unidade Federativa ?" << endl;
+        cin >> ufc;
 
-            cout << "Qual deve ser o seu nome de usuário ?" << endl;
-            cin >> idUsuarioc;
+        cout << "Qual deve ser o seu nome de usuário ?" << endl;
+        cin >> idUsuarioc;
                 
-            cout << "Digite a sua senha " << endl;
-            cin >> senhac;
+        cout << "Digite a sua senha " << endl;
+        cin >> senhac;
 
-            Usuario perfil = Usuario(nomec, telefonec, emailc, idUsuarioc, carteirac, senhac);
-            Endereco end = Endereco(cidadec, ufc);
+        Usuario perfil = Usuario(nomec, telefonec, emailc, idUsuarioc, carteirac, senhac);
+        Endereco end = Endereco(cidadec, ufc);
                
         
         Rede net = Rede(perfil);
