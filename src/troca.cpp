@@ -1,9 +1,8 @@
 #include <iostream>
 #include "transacao.hpp"
 #include "troca.hpp"
-
-Troca::Troca(){
-    
+Troca::Troca(int rtype){
+    roi = rtype;
 }
 
 void Troca::modifica_status(){
@@ -17,7 +16,7 @@ std::string Troca::operacao(Usuario u){
     std::cin>> o;
     for(int i=0; i<100; i++){ //DEFINIR LIMITE DE 100 POSTS
         if(u.conj_post[i] == o){
-            //pop.back obra;
+            std::cout<<"oi"<<std::endl;
         }
     }
     std::cout<<"Troca solicitada com sucesso! Entre em contato com este usuário para realizar a troca."<<std::endl;

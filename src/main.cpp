@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void main(){
+int main(){
     cout << "Bem-vindo(a) à Biblioteca virtual"<< endl;
     cout << "Cadastre-se"<< endl;
         string nomec;
@@ -93,7 +93,8 @@ void main(){
                 }
                 else if(opcao3 == 'v'){
                     char opcao4;
-                    Venda v = Venda();
+                    int muie = 4;
+                    Venda v = Venda(muie);
                     v.operacao(perfil);
                     v.modifica_status();
                     cout<<"Aperte x para fechar o programa"<<endl;
@@ -103,7 +104,8 @@ void main(){
                 }
                 else if(opcao3 == 't' ){
                     char opcao5;
-                    Troca t = Troca();
+                    int omi = 1;
+                    Troca t = Troca(omi);
                     t.operacao(perfil);
                     t.modifica_status();
                     cout<<"Aperte x para fechar o programa"<<endl;

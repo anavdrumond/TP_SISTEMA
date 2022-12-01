@@ -3,8 +3,8 @@
 #include "venda.hpp"
 #include "postagem.hpp"
 
-Venda::Venda(){
-
+Venda::Venda(int pote){
+    ola = pote;
 }
 
 void Venda::modifica_status(){
