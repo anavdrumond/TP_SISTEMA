@@ -28,3 +28,11 @@ class Rede{
     void compra_moeda(Usuario us);
 
 };
+
+class nomeInvalido: public std::exception {
+    std::string _nome;
+
+public:
+    nomeInvalido(std::string nome);
+    const char* what() const noexcept;
+};

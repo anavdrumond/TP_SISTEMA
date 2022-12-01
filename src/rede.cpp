@@ -5,34 +5,53 @@
 Rede::Rede(Usuario perfil_){
     perfil = perfil_;
 };
+
 void Rede::deleta_postagem(Usuario us, std::string postagem_apagar){
     for(int i=0; i<100; i++){
         if(us.conj_post[i] == postagem_apagar){
             us.conj_post.erase (us.conj_post.begin()+i - 1);
-
         }
     }
     std::cout<<"Postagem deletada com sucesso!"<<std::endl;
 }
+nomeInvalido::nomeInvalido(std::string titulo){
+    _titulo = titulo;
+    mensagem = "Digite um nome válido!";
+}
+const char* nomeInvalido::what() const noexcept{
+    return mensagem;
+}
 void Rede::fazer_postagem(Usuario us){
-    std::cout<<"queremos saber mais sobre o livro"<<std::endl;
-    std::cout<<"qual o nome do livro ?"<<std::endl;
+    std::cout<<"Queremos saber mais sobre o livro..."<<std::endl;
+    std::cout<<"Qual o nome do livro ?"<<std::endl;
     std::string obra_l;
     std::cin>>obra_l;
+    if(obra_l == NULL || obra_l == " "){
+        throw NomeInvalido(obra_l);
+    }
 
-    std::cout<<"qual o autor ou autora ?"<<std::endl;
+    std::cout<<"Qual o autor ou autora ?"<<std::endl;
     std::string autor_l;
     std::cin>>autor_l;
+        if(autor_l == NULL || autor_l == " "){
+        throw NomeInvalido(autor_l);
+    }
 
-    std::cout<<"qual a editora ?"<<std::endl;
+    std::cout<<"Qual a editora ?"<<std::endl;
     std::string editora_l;
     std::cin>>editora_l;
+        if(editora_l == NULL || editora_l == " "){
+        throw NomeInvalido(editora_l);
+    }
 
-    std::cout<<"o livro é novo ou usado ?"<<std::endl;
+    std::cout<<"O livro é novo ou usado ?"<<std::endl;
     std::string condicao_l;
     std::cin>>condicao_l;
+        if(condicao_l!= 'novo' || condicao_l!='usado'){
+            //throw 
+        } 
 
-    std::cout<<"qual ano de lançamento ?"<<std::endl;
+    std::cout<<"Qual ano de lançamento ?"<<std::endl;
     int ano_l;
     std::cin>>ano_l;
 
@@ -41,11 +60,11 @@ void Rede::fazer_postagem(Usuario us){
     std::string descricao_post;
     std::cin>>descricao_post;
 
-    std::cout<<"qual o preço do livro?"<<std::endl;
+    std::cout<<"Qual o preço do livro?"<<std::endl;
     float valor_livro;
     std::cin>>valor_livro;
 
-    std::cout<<"qual a categoria do livro?"<<std::endl;
+    std::cout<<"Qual a categoria do livro?"<<std::endl;
     std::string _categ;
     std::cin>>_categ;
     Livro liv = Livro(obra_l,autor_l,editora_l,condicao_l,ano_l);
