@@ -6,50 +6,49 @@ using namespace std;
 
 void main(){
     while(true){
-        while(true){
-            cout << "Bem-vindo(a) à Biblioteca virtual"<< endl;
-            cout << "Você possui cadastro? (s/n) "<< endl;
-            char cadastro;
-            cin >> cadastro;
-            if(cadastro == 's'){
+        //while(true){
+        cout << "Bem-vindo(a) à Biblioteca virtual"<< endl;
+        cout << "Cadastre-se"<< endl;
+            //char cadastro;
+            //cin >> cadastro;
+            //if(cadastro == 's'){
                 //pedir email
                 //pedir senha
                 //
-            }
-            else if(cadastro == 'n'){
-                string nomec;
-                string telefonec;
-                string senhac;
-                string emailc;
-                string cidadec;
-                string ufc;
-                string idUsuarioc;
-                float carteirac = 0;
-
-                cout << "Qual é o seu nome ?" << endl;
-                cin >> nomec;
-
-                cout << "Digite o seu telefone " << endl;
-                cin >> telefonec;
-
-                cout << "Digite o nome da sua cidade " << endl;
-                cin >> cidadec;
-
-                cout << "Qual é a sua Unidade Federativa ?" << endl;
-                cin >> ufc;
-
-                cout << "Qual deve ser o seu nome de usuário ?" << endl;
-                cin >> idUsuarioc;
+            //}
+            //if(cadastro == 'n'){
                 
-                cout << "Digite a sua senha " << endl;
-                cin >> senhac;
+            string nomec;
+            string telefonec;
+            string senhac;
+            string emailc;
+            string cidadec;
+            string ufc;
+            string idUsuarioc;
+            float carteirac = 0;
 
-               Usuario perfil = Usuario(nomec, telefonec, emailc, idUsuarioc, carteirac, senhac);
-               Endereco end = Endereco(cidadec, ufc);
+            cout << "Qual é o seu nome ?" << endl;
+            cin >> nomec;
+
+            cout << "Digite o seu telefone " << endl;
+            cin >> telefonec;
+
+            cout << "Digite o nome da sua cidade " << endl;
+            cin >> cidadec;
+
+            cout << "Qual é a sua Unidade Federativa ?" << endl;
+            cin >> ufc;
+
+            cout << "Qual deve ser o seu nome de usuário ?" << endl;
+            cin >> idUsuarioc;
+                
+            cout << "Digite a sua senha " << endl;
+            cin >> senhac;
+
+            Usuario perfil = Usuario(nomec, telefonec, emailc, idUsuarioc, carteirac, senhac);
+            Endereco end = Endereco(cidadec, ufc);
                
-            }break;
-        }
-
+        
         Rede net = Rede(perfil);
         cout << "Menu de opções : " << endl;
         cout << "Se deseja procurar um usuário, digite u" << endl;
@@ -64,23 +63,39 @@ void main(){
         cin >> opcao;
 
         if(opcao == 'u'){
-            cout << "Buscar id do usuário:" << endl;
-            cin >> 
+            cout << "Buscar id do usuário: " << endl;
+            std::string name;
+            cin >> name;
+            net.pesquisa_usuario(name);
+            //COMPLETAR
         }
+
         else if(opcao =='p'){
-
+            cout<<"Digite o nome da postagem: "<<endl;
+            std::string name_postagem;
+            cin>> name_postagem;
+            net.pesquisa_postagem(name_postagem);
+            //CPOMPLETAR
         }
+
         else if(opcao == 'n'){
-
+            net.fazer_postagem(perfil);
+            //COMPLETAR
         }
+
         else if(opcao == 'r'){
-
+            cout<<"Digite o nome da postagem que deseja deletar: "<<endl;
+            std::string name_delet;
+            cin>> name_delet;
+            net.deleta_postagem(perfil, name_delet);
         }
+
         else if(opcao == 'e'){
-
+            perfil.mostra_usuario();
         }
-        else if(opcao == 'x'){
 
+        else if(opcao == 'x'){
+            break;
         }
     }
 
