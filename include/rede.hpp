@@ -36,4 +36,6 @@ class nomeInvalido: public std::exception {
 public:
     nomeInvalido(std::string titulo);
     const char* what() const noexcept;
+
 };
+

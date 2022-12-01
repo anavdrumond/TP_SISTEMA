@@ -17,7 +17,6 @@
 
 /**
  * @brief Armazena cidade e estado de um usuário em seus posts
- * 
  */
 
 class Endereco {
