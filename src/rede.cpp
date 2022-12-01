@@ -9,8 +9,10 @@ void Rede::deleta_postagem(Usuario us, std::string postagem_apagar){
     for(int i=0; i<100; i++){
         if(us.conj_post[i] == postagem_apagar){
             us.conj_post.erase (us.conj_post.begin()+i - 1);
+
         }
     }
+    std::cout<<"Postagem deletada com sucesso!"<<std::endl;
 }
 void Rede::fazer_postagem(Usuario us){
     std::cout<<"queremos saber mais sobre o livro"<<std::endl;
@@ -48,6 +50,9 @@ void Rede::fazer_postagem(Usuario us){
     std::cin>>_categ;
     Livro liv = Livro(obra_l,autor_l,editora_l,condicao_l,ano_l);
     Postagem posta = Postagem(apelido_us, descricao_post, valor_livro,_categ);
+    posta.set_livro(liv);
+    postagens.push_back(posta);
+    std::cout<<"Postagem realizada com sucesso"<<std::endl;
 }
 
 void Rede::pesquisa_postagem(std::string livro_pesquisar){

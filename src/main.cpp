@@ -1,23 +1,14 @@
 #include <iostream>
 #include "rede.hpp"
 #include "transacao.hpp"
+#include "venda.hpp"
+#include "troca.hpp"
 
 using namespace std;
 
 void main(){
-    while(true){
-        //while(true){
-        cout << "Bem-vindo(a) à Biblioteca virtual"<< endl;
-        cout << "Cadastre-se"<< endl;
-            //char cadastro;
-            //cin >> cadastro;
-            //if(cadastro == 's'){
-                //pedir email
-                //pedir senha
-                //
-            //}
-            //if(cadastro == 'n'){
-                
+    cout << "Bem-vindo(a) à Biblioteca virtual"<< endl;
+    cout << "Cadastre-se"<< endl;
         string nomec;
         string telefonec;
         string senhac;
@@ -48,39 +39,98 @@ void main(){
         Usuario perfil = Usuario(nomec, telefonec, emailc, idUsuarioc, carteirac, senhac);
         Endereco end = Endereco(cidadec, ufc);
                
-        
         Rede net = Rede(perfil);
+    while(true){
+
         cout << "Menu de opções : " << endl;
         cout << "Se deseja procurar um usuário, digite u" << endl;
         cout << "Se deseja procurar uma postagem, digite p" << endl;
         cout << "Se você quer fazer uma postagem, digite n" << endl;
         cout << "Se você quer retirar uma postagem, digite r" << endl;
         cout << "Se você deseja acessar o seu perfil, digite e'" << endl;
-        cout << "Se deseja fechar o programa, digite x" << endl << endl;
+        cout << "Se deseja fechar o programa, digite x" << endl;
 
         char opcao;
 
         cin >> opcao;
 
         if(opcao == 'u'){
-            cout << "Buscar id do usuário: " << endl;
-            std::string name;
-            cin >> name;
-            net.pesquisa_usuario(name);
-            //COMPLETAR
+            while(true){
+                char opcao2;
+                cout << "Buscar id do usuário: " << endl;
+                string name;
+                cin >> name;
+                net.pesquisa_usuario(name);
+                cout<<"Se deseja voltar ao menu principal, aperte x"<<endl;
+                cout<<"Se deseja procurar uma postagem, digite p" << endl;
+                cin>>opcao2;
+                if(opcao2 == 'x'){
+                    break;
+                }
+                if(opcao2 == 'p'){
+                    string post;
+                    cout<<"Digite qual postagem você deseja abrir"<<endl;
+                    cin>>post;
+                    //COMPLETAR
+                }
+
+            }
         }
 
         else if(opcao =='p'){
-            cout<<"Digite o nome da postagem: "<<endl;
-            std::string name_postagem;
-            cin>> name_postagem;
-            net.pesquisa_postagem(name_postagem);
-            //CPOMPLETAR
+            while(true){
+                char opcao3;
+                cout<<"Digite o nome da postagem: "<<endl;
+                std::string name_postagem;
+                cin>> name_postagem;
+                net.pesquisa_postagem(name_postagem);
+                cout<<"Se deseja voltar ao menu principal, aperte x"<<endl;
+                cout<<"Você deseja comprar(v) ou trocar(t)?"<<endl;
+                cin>>opcao3;
+
+                if(opcao3 == 'x'){
+                    break;
+                }
+                else if(opcao3 == 'v'){
+                    char opcao4;
+                    Venda v = Venda();
+                    v.operacao(perfil);
+                    v.modifica_status();
+                    cout<<"Aperte x para fechar o programa"<<endl;
+                    cin>>opcao4;
+                    if(opcao4 == 'x')
+                        break;
+                }
+                else if(opcao3 == 't' ){
+                    char opcao5;
+                    Troca t = Troca();
+                    t.operacao(perfil);
+                    t.modifica_status();
+                    cout<<"Aperte x para fechar o programa"<<endl;
+                    cin>>opcao5;
+                    if(opcao5 == 'x')
+                        break;
+                }
+                else
+                    break;
+            }    
         }
 
         else if(opcao == 'n'){
-            net.fazer_postagem(perfil);
-            //COMPLETAR
+            while(true){
+                net.fazer_postagem(perfil);
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                char op;
+                cout<<"aperte x para continuar"<<endl;
+                cin>>op;
+                if(op == 'x'){
+                    break;
+                }
+                else{
+
+                }
+            }
         }
 
         else if(opcao == 'r'){
@@ -88,6 +138,9 @@ void main(){
             std::string name_delet;
             cin>> name_delet;
             net.deleta_postagem(perfil, name_delet);
+            cout<<" "<<endl;
+            cout<<" "<<endl;
+        
         }
 
         else if(opcao == 'e'){

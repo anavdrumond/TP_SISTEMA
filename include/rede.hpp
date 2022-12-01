@@ -13,14 +13,12 @@
 
 #include<iostream>
 #include"usuario.hpp"
-#pragma once
 
 class Rede{
     private:
     Usuario perfil;
     std::vector <Postagem> postagens;
     std::vector <Usuario> perfis;
-    std::string postagem_apagar;
 
     public:
     Rede(Usuario perfil_);
