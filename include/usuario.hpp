@@ -3,6 +3,7 @@
 #include <vector>
 #include "endereco.hpp"
 #include "postagem.hpp"
+#pragma once
 
 class Usuario {
     private:

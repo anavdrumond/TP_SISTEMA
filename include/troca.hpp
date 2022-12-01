@@ -14,6 +14,7 @@
 #include <iostream>
 #include "transacao.hpp"
 #include "usuario.hpp"
+#pragma once
 
 class Troca:public Transacao {
 

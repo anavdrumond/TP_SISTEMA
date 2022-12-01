@@ -10,6 +10,7 @@
  */
 
 #include<iostream>
+#pragma once
 
 /**
  * @brief Armazena os dados de um livro, os quais aparecerão em postagem.

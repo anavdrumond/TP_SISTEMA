@@ -13,6 +13,7 @@
 
 #include<iostream>
 #include"usuario.hpp"
+#pragma once
 
 class Rede{
     private:

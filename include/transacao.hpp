@@ -13,6 +13,7 @@
 #include <iostream>
 #include "postagem.hpp"
 #include "usuario.hpp"
+#pragma once
 
 class Transacao:public Postagem{
 

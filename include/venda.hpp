@@ -13,6 +13,7 @@
 #include <iostream>
 #include "transacao.hpp"
 #include "usuario.hpp"
+#pragma once
 
 class Venda:public Transacao {
 

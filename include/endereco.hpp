@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <string>
+#pragma once 
 
 /**
  * @brief Armazena cidade e estado de um usuário em seus posts
