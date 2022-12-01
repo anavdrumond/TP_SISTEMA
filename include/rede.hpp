@@ -30,9 +30,10 @@ class Rede{
 };
 
 class nomeInvalido: public std::exception {
-    std::string _nome;
+    std::string _titulo;
+    std::string mensagem;
 
 public:
-    nomeInvalido(std::string nome);
+    nomeInvalido(std::string titulo);
     const char* what() const noexcept;
 };
