@@ -19,3 +19,10 @@ std::string Postagem::get_categoria(){
 std::string Postagem::get_nome_post(){
     return nome_post;
 }
+
+void Postagem::mostra_postagem(){
+    std::cout<<apelido<<std::endl;
+    std::cout<<descricao<<std::endl;
+    std::cout<<preco<<std::endl;
+    std::cout<<categoria<<std::endl;
+}

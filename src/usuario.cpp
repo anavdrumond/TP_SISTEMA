@@ -31,3 +31,12 @@ std::string Usuario::get_idusuario(){
     return idUsuario;
 }
 
+void Usuario::mostra_usuario(){
+    std::cout<<nome<<std::endl;
+    std::cout<<telefone<<std::endl;
+    std::cout<<email<<std::endl;
+
+    for(int i=0; i<100; i++){
+        std::cout<<conj_post[i]<<std::endl;
+    }
+}

@@ -50,11 +50,20 @@ void Rede::fazer_postagem(Usuario us){
     Postagem posta = Postagem(apelido_us, descricao_post, valor_livro,_categ);
 }
 
-Postagem Rede::pesquisa_postagem(){
-
+void Rede::pesquisa_postagem(std::string livro_pesquisar){
+    for(int i=0; i<100; i++){
+        if(postagens[i].get_nome_post() == livro_pesquisar){
+            postagens[i].mostra_postagem();
+        }
+    }    
 }
-Usuario Rede::pesquisa_usuario(){
 
+void Rede::pesquisa_usuario(std::string apelido_pesquisar){
+    for(int i=0; i<100; i++){
+        if(perfis[i].get_idusuario() == apelido_pesquisar){
+            perfis[i].mostra_usuario();
+        }
+    }    
 }
 
 void Rede::compra_moeda(Usuario us){
@@ -64,22 +73,3 @@ void Rede::compra_moeda(Usuario us){
     std::cin>>dinheiro;
     us.modifica_carteira(dinheiro, esc);
 }
-void Rede::adiciona_amigo(Usuario us){}
-    
-
-/* 
-Literatura infantil/juvenil
-Ficçao/Literatura
-Biografia
-Gastronomia
-Autoajuda
-História
-Viagem
-Humor
-Guias & Como fazer 
-Religião e Espiritualidade
-Humanidades e Ciências Sociais
-Paternidade e família
-Tecnologia e Ciência
-Outros
-*\

@@ -31,4 +31,8 @@ class Postagem{
 
     std::string get_categoria();
 
+    std::string get_nome_post();
+
+    void mostra_postagem();
+
 };

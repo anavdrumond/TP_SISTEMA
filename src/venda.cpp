@@ -22,3 +22,5 @@ std::string Venda::operacao(Usuario u){
     u.modifica_carteira(preco,op_);
     std::cout<< "Compra efetuada com sucesso!"<<std::endl;
 }
+
+//COLOCAR ENDERECO

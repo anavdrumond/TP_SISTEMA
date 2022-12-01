@@ -15,14 +15,16 @@ class Usuario {
         float carteira; 
 
     public:
+        Usuario() = default;
         Usuario(std::string _nome, std::string _telefone, std::string _senha, 
         std::string _email, std::string _idUsuario, float _carteira);
 
         std::vector <std::string> conj_post;
-        std::vector <std::string> conj_amigos;
 
         void recebe_postagem(std::string p);
         std::string get_idusuario();
 
         void modifica_carteira(float valor, char op);
+
+        void mostra_usuario();
 };

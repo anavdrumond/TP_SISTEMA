@@ -24,11 +24,9 @@ class Rede{
     public:
     Rede(Usuario perfil_);
     void deleta_postagem(Usuario us, std::string postagem_apagar);
-    void cancela_usuario(Usuario us); 
     void fazer_postagem(Usuario us);
-    Postagem pesquisa_postagem();
-    Usuario pesquisa_usuario();
+    void pesquisa_postagem(std::string livro_pesquisar);
+    void pesquisa_usuario(std::string apelido_pesquisar);
     void compra_moeda(Usuario us);
-    void adiciona_amigo(Usuario us);
 
 };

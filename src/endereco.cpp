@@ -1,11 +1,7 @@
 #include "endereco.hpp"
 
-Endereco::Endereco (std::string _cep, std::string _rua, std::string _bairro, 
-    std::string _cidade, std::string _uf){
+Endereco::Endereco (std::string _cidade, std::string _uf){
 
-        cep = _cep;
-        rua = _rua;
-        bairro = _bairro;
-        cidade = _cidade;
-        uf = _uf;
-    };
+    cidade = _cidade;
+    uf = _uf;
+};

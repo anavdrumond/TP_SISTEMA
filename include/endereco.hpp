@@ -34,19 +34,14 @@ class Endereco {
         std::string uf;
 
      /**
-     * @brief Adiciona a nova senha à estrutura senha_vazada
+     * @brief Contrutor da calsse Endereco
      * 
-     * @details A parte alfabética da string, ou seja,
-     * a senha digitada pelo usuário, é mapeada para os seus
-     * correspondentes numéricos, também contidos na string. 
-     * Esses números são armazenados na estrutura senha_vazada.
+     * @details inicializa a estrutura indices_associacao 
+     * inicializa a estrutura indices_associacao 
+     * com as posições pré-definidas da string de entrada,
+     * indicando os índices de correspondência numérica de
+     * cada letra. Inicialização nula do valor num_senhas.      
      * 
-     * @param vazou string contendo a senha no formato
-     * 10 valores numéricos (0-9) separados por espaços em 
-     * branco indicando a associação entre letras (A-E) e o 
-     * par de inteiros da criptografia de senha. Os últimos
-     * caracteres contém a senha de 6 dígitos também separada 
-     * por espaços em branco.  
      */
     Endereco(std::string _cidade, std::string _uf);
 };
