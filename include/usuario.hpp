@@ -1,4 +1,4 @@
-//USUARIO.HPP
+
 #include <iostream>
 #include <vector>
 #include "endereco.hpp"
@@ -22,8 +22,7 @@ class Usuario {
         std::vector <std::string> conj_amigos;
 
         void recebe_postagem(std::string p);
+        std::string get_idusuario();
 
         void modifica_carteira(float valor, char op);
-
-
 };

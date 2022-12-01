@@ -5,11 +5,12 @@
 Rede::Rede(Usuario perfil_){
     perfil = perfil_;
 };
-void Rede::deleta_postagem(Usuario us){
-
-}
-void Rede::cancela_usuario(Usuario us){
-
+void Rede::deleta_postagem(Usuario us, std::string postagem_apagar){
+    for(int i=0; i<100; i++){
+        if(us.conj_post[i] == postagem_apagar){
+            us.conj_post.erase (us.conj_post.begin()+i - 1);
+        }
+    }
 }
 void Rede::fazer_postagem(Usuario us){
     std::cout<<"queremos saber mais sobre o livro"<<std::endl;
@@ -19,11 +20,11 @@ void Rede::fazer_postagem(Usuario us){
 
     std::cout<<"qual o autor ou autora ?"<<std::endl;
     std::string autor_l;
-    std::cin>>autor_l
+    std::cin>>autor_l;
 
     std::cout<<"qual a editora ?"<<std::endl;
     std::string editora_l;
-    std::cin>>editora_l
+    std::cin>>editora_l;
 
     std::cout<<"o livro é novo ou usado ?"<<std::endl;
     std::string condicao_l;
@@ -31,7 +32,7 @@ void Rede::fazer_postagem(Usuario us){
 
     std::cout<<"qual ano de lançamento ?"<<std::endl;
     int ano_l;
-    std::cin>>ano_l
+    std::cin>>ano_l;
 
     std::string apelido_us = us.get_idusuario();
     std::cout<<"de uma descrição:"<<std::endl;
@@ -58,9 +59,12 @@ Usuario Rede::pesquisa_usuario(){
 
 void Rede::compra_moeda(Usuario us){
     char esc = 'c';
-    us.modifica_carteira(esc);
+    float dinheiro;
+    std::cout<<"Quanto você quer resgatar?"<<std::endl;
+    std::cin>>dinheiro;
+    us.modifica_carteira(dinheiro, esc);
 }
-void Rede::adiciona_amigo(){}
+void Rede::adiciona_amigo(Usuario us){}
     
 
 /* 
@@ -78,4 +82,4 @@ Humanidades e Ciências Sociais
 Paternidade e família
 Tecnologia e Ciência
 Outros
-*
+*\
