@@ -43,5 +43,8 @@ class Endereco {
      * cada letra. Inicialização nula do valor num_senhas.      
      * 
      */
+    Endereco() = default;
     Endereco(std::string _cidade, std::string _uf);
+    std::string get_cidade();
+    std::string get_uf();
 };

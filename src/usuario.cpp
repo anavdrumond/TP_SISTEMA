@@ -1,8 +1,8 @@
 #include "usuario.hpp"
 #include "endereco.hpp"
 
-Usuario::Usuario(std::string _nome, std::string _telefone, std::string _senha, 
-        std::string _email, std::string _idUsuario, float _carteira){
+Usuario::Usuario(std::string _nome, std::string _telefone, std::string _email, 
+std::string _idUsuario, float _carteira, std::string _senha){
 
         nome = _nome;
         telefone = _telefone;
@@ -39,4 +39,8 @@ void Usuario::mostra_usuario(){
     for(int i=0; i<100; i++){
         std::cout<<conj_post[i]<<std::endl;
     }
+}
+
+void Usuario::set_endereco(Endereco end_){
+    endereco = Endereco(end_.get_cidade(), end_.get_uf());
 }

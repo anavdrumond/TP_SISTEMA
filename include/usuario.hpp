@@ -10,14 +10,13 @@ class Usuario {
         std::string telefone;
         std::string senha;
         std::string email;
-        std::string rel_cep;
         std::string idUsuario;
         float carteira; 
+        Endereco endereco;
 
     public:
         Usuario() = default;
-        Usuario(std::string _nome, std::string _telefone, std::string _senha, 
-        std::string _email, std::string _idUsuario, float _carteira);
+        Usuario(std::string _nome, std::string _telefone, std::string _email, std::string _idUsuario, float _carteira, std::string _senha);
 
         std::vector <std::string> conj_post;
 
@@ -27,4 +26,6 @@ class Usuario {
         void modifica_carteira(float valor, char op);
 
         void mostra_usuario();
+
+        void set_endereco(Endereco end_);
 };

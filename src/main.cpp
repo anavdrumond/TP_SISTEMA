@@ -8,11 +8,13 @@ void main(){
     while(true){
         while(true){
             cout << "Bem-vindo(a) à Biblioteca virtual"<< endl;
-            cout << "Você possui cadastro ?"<< endl;
+            cout << "Você possui cadastro? (s/n) "<< endl;
             char cadastro;
             cin >> cadastro;
             if(cadastro == 's'){
-
+                //pedir email
+                //pedir senha
+                //
             }
             else if(cadastro == 'n'){
                 string nomec;
@@ -30,9 +32,6 @@ void main(){
                 cout << "Digite o seu telefone " << endl;
                 cin >> telefonec;
 
-                cout << "Digite a sua senha " << endl;
-                cin >> senhac;
-
                 cout << "Digite o nome da sua cidade " << endl;
                 cin >> cidadec;
 
@@ -41,53 +40,48 @@ void main(){
 
                 cout << "Qual deve ser o seu nome de usuário ?" << endl;
                 cin >> idUsuarioc;
+                
+                cout << "Digite a sua senha " << endl;
+                cin >> senhac;
 
-                Usuario( nomec,  telefonec, senhac, string emailc, string cidadec, string ufc, string idUsuarioc, float carteirac);
-           
-            }
-         }
-    }
+               Usuario perfil = Usuario(nomec, telefonec, emailc, idUsuarioc, carteirac, senhac);
+               Endereco end = Endereco(cidadec, ufc);
+               
+            }break;
+        }
 
-    //menu
-    //
-    //
-    //
-    //
-    //
-    while(true){
-        while(true){
-            cout << "Menu de opções : " << endl;
-            cout << "Se deseja procurar um usuário, digite usuarios" << endl;
-            cout << "Se deseja procurar uma postagem, digite postagens" << endl;
-            cout << "Se você quer fazer uma postagem, digite novo" << endl;
-            cout << "Se você quer retirar uma postagem, digite retirar" << endl;
-            cout << "Se você deseja acessar o seu perfil, digite perfil" << endl;
-            cout << "Se deseja fechar o programa, digite sair" << endl << endl;
+        Rede net = Rede(perfil);
+        cout << "Menu de opções : " << endl;
+        cout << "Se deseja procurar um usuário, digite u" << endl;
+        cout << "Se deseja procurar uma postagem, digite p" << endl;
+        cout << "Se você quer fazer uma postagem, digite n" << endl;
+        cout << "Se você quer retirar uma postagem, digite r" << endl;
+        cout << "Se você deseja acessar o seu perfil, digite e'" << endl;
+        cout << "Se deseja fechar o programa, digite x" << endl << endl;
 
-            string opcao;
+        char opcao;
 
-            cin >> opcao;
+        cin >> opcao;
 
-            if(opcao == "usuarios"){
-                cout << "Bem-vindo(a) a nossa lista de usuários" << endl;
-            }
-                else if(opcao == "postagens"){
+        if(opcao == 'u'){
+            cout << "Buscar id do usuário:" << endl;
+            cin >> 
+        }
+        else if(opcao =='p'){
 
-                }
-                    else if(opcao == "novo"){
+        }
+        else if(opcao == 'n'){
 
-                    }
-                        else if(opcao == "retirar"){
+        }
+        else if(opcao == 'r'){
 
-                        }
-                            else if(opcao == "perfil"){
+        }
+        else if(opcao == 'e'){
 
-                            }
-                                else if(opcao == "sair"){
-
-                                }
-
+        }
+        else if(opcao == 'x'){
 
         }
     }
+
 }
