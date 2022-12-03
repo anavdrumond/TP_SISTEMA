@@ -29,12 +29,12 @@ class Rede{
 
 };
 
-class nomeInvalido: public std::exception {
+class NomeInvalido: public std::exception {
     std::string _titulo;
     std::string mensagem;
 
 public:
-    nomeInvalido(std::string titulo);
+    NomeInvalido(std::string titulo);
     const char* what() const noexcept;
 
 };
