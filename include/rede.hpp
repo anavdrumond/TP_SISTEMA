@@ -39,3 +39,9 @@ public:
 
 };
 
+class condicaoInvalida: public std::exception{
+    std::string cond;
+public:
+    condicaoInvalida(std::string cond);
+    const char* what() const noexcept;
+};

@@ -27,7 +27,7 @@ void Rede::fazer_postagem(Usuario us){
     std::string obra_l;
     std::cin>>obra_l;
     if(obra_l == NULL || obra_l == " "){
-        throw NomeInvalido(obra_l);
+        throw nomeInvalido(obra_l);
     }
 
     std::cout<<"Qual o autor ou autora ?"<<std::endl;
@@ -47,9 +47,9 @@ void Rede::fazer_postagem(Usuario us){
     std::cout<<"O livro é novo ou usado ?"<<std::endl;
     std::string condicao_l;
     std::cin>>condicao_l;
-        if(condicao_l!= 'novo' || condicao_l!='usado'){
-            //throw 
-        } 
+        //if(condicao_l!= "novo" || condicao_l!="usado"){
+        //    throw 
+        //} 
 
     std::cout<<"Qual ano de lançamento ?"<<std::endl;
     int ano_l;
