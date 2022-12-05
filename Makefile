@@ -14,19 +14,19 @@ endereco:
 postagem: livro
 	$(CC) $(FLAGS) -c $(SRCDIR)/postagem.cpp -o $(BUILDDIR)/postagem.o
 
-rede: 
+rede: usuario
 	$(CC) $(FLAGS) -c $(SRCDIR)/rede.cpp -o $(BUILDDIR)/rede.o
 
-usuario: endereco
+usuario: postagem endereco
 	$(CC) $(FLAGS) -c $(SRCDIR)/usuario.cpp -o $(BUILDDIR)/usuario.o
 	
-transacao:postagem
+transacao: postagem usuario
 	$(CC) $(FLAGS) -c $(SRCDIR)/transacao.cpp -o $(BUILDDIR)/transacao.o
 
-troca:transacao
+troca:transacao usuario
 	$(CC) $(FLAGS) -c $(SRCDIR)/troca.cpp -o $(BUILDDIR)/troca.o
 
-venda: transacao postagem
+venda: transacao usuario
 	$(CC) $(FLAGS) -c $(SRCDIR)/venda.cpp -o $(BUILDDIR)/venda.o
 
 main: endereco livro postagem rede troca usuario venda
