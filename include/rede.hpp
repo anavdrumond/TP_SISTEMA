@@ -13,6 +13,9 @@
 #include<iostream>
 #include"usuario.hpp"
 
+/**
+ * @brief Classe responsável pela manutenção do programa.
+ */
 class Rede{
     private:
     Usuario perfil;

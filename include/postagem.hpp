@@ -14,6 +14,9 @@
 #include "livro.hpp"
 #pragma once
 
+/**
+ * @brief Armazena os livros postados pelo usuário.
+ */
 class Postagem{
     private:
     Livro produto;
@@ -35,7 +38,9 @@ class Postagem{
     Livro get_livro();
     float get_preco();
 
-
+/**
+ * @brief exibe as postagens realizadas.
+ */
     void mostra_postagem();
 
 };

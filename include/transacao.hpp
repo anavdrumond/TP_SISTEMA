@@ -15,6 +15,9 @@
 #include "usuario.hpp"
 #pragma once
 
+/**
+ * @brief 
+ */
 class Transacao{
    
     public:
