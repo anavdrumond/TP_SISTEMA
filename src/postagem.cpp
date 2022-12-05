@@ -1,7 +1,7 @@
 #include <iostream>
 #include "postagem.hpp"
 
-Postagem::Postagem(std::string apelido_, std::string descricao_, float preco_,std::string _cat,std::string name_p){
+Postagem::Postagem(std::string apelido_ ,std::string descricao_ ,float preco_ ,std::string _cat ,std::string name_p){
     apelido = apelido_;
     descricao = descricao_;
     preco = preco_;
@@ -19,6 +19,10 @@ std::string Postagem::get_categoria(){
 
 std::string Postagem::get_nome_post(){
     return nome_post;
+}
+
+std::string Postagem::get_apelido(){
+    return apelido;
 }
 
 std::string Postagem::get_descricao(){
