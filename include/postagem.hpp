@@ -21,16 +21,20 @@ class Postagem{
     std::string apelido;
     std::string nome_post;
     std::string categoria;
+    float preco;
 
     public:
-    float preco;
-    Postagem(std::string apelido_, std::string descricao_, float preco_, std::string categoria);
+    Postagem(std::string apelido_, std::string descricao_, float preco_, std::string _cat,std::string name_p);
 
     void set_livro(Livro l);
 
     std::string get_categoria();
-
     std::string get_nome_post();
+    std::string get_apelido();
+    std::string get_descricao();
+    Livro get_livro();
+    float get_preco();
+
 
     void mostra_postagem();
 

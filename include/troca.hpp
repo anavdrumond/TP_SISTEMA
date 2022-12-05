@@ -17,13 +17,11 @@
 #pragma once
 
 class Troca:public Transacao {
-    int roi;
 
     public:
     void modifica_status() override;
     std::string operacao(Usuario u) override;
-    float get_preco();
-    Troca(int rtype);
+    Troca();
 };
 
 //COLOCAR ENDEREÇO

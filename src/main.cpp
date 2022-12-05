@@ -83,7 +83,7 @@ int main(){
                 cout<<"Digite o nome da postagem: "<<endl;
                 std::string name_postagem;
                 cin>> name_postagem;
-                net.pesquisa_postagem(name_postagem);
+                Postagem pot = net.pesquisa_postagem(name_postagem);
                 cout<<"Se deseja voltar ao menu principal, aperte x"<<endl;
                 cout<<"Você deseja comprar(v) ou trocar(t)?"<<endl;
                 cin>>opcao3;
@@ -93,8 +93,7 @@ int main(){
                 }
                 else if(opcao3 == 'v'){
                     char opcao4;
-                    int muie = 4;
-                    Venda v = Venda(muie);
+                    Venda v = Venda(pot);
                     v.operacao(perfil);
                     v.modifica_status();
                     cout<<"Aperte x para fechar o programa"<<endl;
@@ -104,8 +103,7 @@ int main(){
                 }
                 else if(opcao3 == 't' ){
                     char opcao5;
-                    int omi = 1;
-                    Troca t = Troca(omi);
+                    Troca t = Troca(pot);
                     t.operacao(perfil);
                     t.modifica_status();
                     cout<<"Aperte x para fechar o programa"<<endl;

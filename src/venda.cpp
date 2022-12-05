@@ -3,8 +3,9 @@
 #include "venda.hpp"
 #include "postagem.hpp"
 
-Venda::Venda(int pote){
-    ola = pote;
+Venda::Venda(Postagem p):Transacao()
+{
+    
 }
 
 void Venda::modifica_status(){
@@ -12,14 +13,10 @@ void Venda::modifica_status(){
     status == "vendido";
 }
 
-float Venda::get_preco(){
-    return preco;
-}
-
 std::string Venda::operacao(Usuario u){
     char op_ = 'v';
-    std::cout<<"O preço do livro é R$" + std::to_string(preco);
-    u.modifica_carteira(preco,op_);
+    std::cout<<"O preco do livro e R$" + std::to_string(postag.get_preco());
+    u.modifica_carteira(postag.get_preco(),op_);
     std::cout<< "Compra efetuada com sucesso!"<<std::endl;
 }
 
