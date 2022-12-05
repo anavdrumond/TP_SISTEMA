@@ -17,17 +17,17 @@ postagem: livro
 rede: 
 	$(CC) $(FLAGS) -c $(SRCDIR)/rede.cpp -o $(BUILDDIR)/rede.o
 
-troca:
-	$(CC) $(FLAGS) -c $(SRCDIR)/troca.cpp -o $(BUILDDIR)/troca.o
-
 usuario: endereco
 	$(CC) $(FLAGS) -c $(SRCDIR)/usuario.cpp -o $(BUILDDIR)/usuario.o
+	
+transacao:postagem
+	$(CC) $(FLAGS) -c $(SRCDIR)/transacao.cpp -o $(BUILDDIR)/transacao.o
+
+troca:transacao
+	$(CC) $(FLAGS) -c $(SRCDIR)/troca.cpp -o $(BUILDDIR)/troca.o
 
 venda: transacao postagem
 	$(CC) $(FLAGS) -c $(SRCDIR)/venda.cpp -o $(BUILDDIR)/venda.o
-
-transacao: troca venda postagem
-	$(CC) $(FLAGS) -c $(SRCDIR)/transacao.cpp -o $(BUILDDIR)/transacao.o
 
 main: endereco livro postagem rede troca usuario venda
 	$(CC) $(FLAGS) $(BUILDDIR)/*.o  $(SRCDIR)/main.cpp -o $(BUILDDIR)/main

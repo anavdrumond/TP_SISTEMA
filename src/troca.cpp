@@ -1,8 +1,9 @@
 #include <iostream>
 #include "transacao.hpp"
 #include "troca.hpp"
-Troca::Troca(int rtype){
-    roi = rtype;
+Troca::Troca(Postagem p):Transacao()
+{
+ 
 }
 
 void Troca::modifica_status(){
@@ -20,8 +21,4 @@ std::string Troca::operacao(Usuario u){
         }
     }
     std::cout<<"Troca solicitada com sucesso! Entre em contato com este usuário para realizar a troca."<<std::endl;
-}
-
-float Troca::get_preco(){
-    return preco;
 }

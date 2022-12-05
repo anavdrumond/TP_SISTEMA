@@ -1,21 +1,13 @@
 #include <iostream>
 #include "transacao.hpp"
 #include "postagem.hpp"
-#include "venda.hpp"
-#include "troca.hpp"
 
-void Transacao::tipo_acordo(char opcao,Usuario perf){
-    if(opcao == 'v'){
-        int cabra = 6;
-        Venda v = Venda(cabra);
-        v.operacao(perf);
-        v.modifica_status();
-    }
 
-    if(opcao == 't'){
-        int oi = 9;
-        Troca t = Troca(oi);
-        t.operacao(perf);
-        t.modifica_status();
-    }
-};
+void Transacao::set_post(Postagem p){
+    postag = Postagem(p.get_apelido(),p.get_descricao(),p.get_preco(),p.get_categoria(),p.get_nome_post());
+    postag.set_livro(p.get_livro());
+}
+std::string Transacao::get_status(){
+    return status;
+}
+

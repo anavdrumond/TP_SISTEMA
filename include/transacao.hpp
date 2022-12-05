@@ -15,13 +15,15 @@
 #include "usuario.hpp"
 #pragma once
 
-class Transacao:public Postagem{
-
+class Transacao{
+   
     public:
+    Postagem postag;
     virtual void modifica_status() = 0;
     virtual std::string operacao(Usuario u) = 0;
-    void tipo_acordo(char opcao,Usuario perf);
+
+    void set_post(Postagem p);
     std::string status = "Disponivel para: troca / venda";
-    virtual float get_preco() = 0;
+    std::string get_status();
     Transacao();
 };
