@@ -77,7 +77,7 @@ void Rede::fazer_postagem(Usuario us){
     std::cout<<"Postagem realizada com sucesso"<<std::endl;
 }
 
-void Rede::pesquisa_postagem(std::string livro_pesquisar){
+Postagem Rede::pesquisa_postagem(std::string livro_pesquisar){
     for(int i=0; i<100; i++){
         if(postagens[i].get_nome_post() == livro_pesquisar){
             postagens[i].mostra_postagem();

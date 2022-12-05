@@ -23,7 +23,7 @@ class Rede{
     Rede(Usuario perfil_);
     void deleta_postagem(Usuario us, std::string postagem_apagar);
     void fazer_postagem(Usuario us);
-    void pesquisa_postagem(std::string livro_pesquisar);
+    Postagem pesquisa_postagem(std::string livro_pesquisar);
     void pesquisa_usuario(std::string apelido_pesquisar);
     void compra_moeda(Usuario us);
 
