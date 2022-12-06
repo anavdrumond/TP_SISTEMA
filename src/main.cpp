@@ -19,7 +19,7 @@ int main(){
     Rede net = Rede(codigo);
     net.fazer_cadastro(esco);
     while(true){
-        cout << "Menu de opções : " << endl;
+        cout << "- MENU DE OPCOES - : " << endl;
         cout << "Se deseja procurar um usuário, digite u" << endl;
         cout << "Se deseja procurar uma postagem, digite p" << endl;
         cout << "Se você quer fazer uma postagem, digite n" << endl;
@@ -97,13 +97,24 @@ int main(){
             int op = 0;
             do{
                 try{
-                net.fazer_postagem(net.get_user());
-                cout<<" "<<endl;
-                cout<<" "<<endl;
-                op++;
-                }catch(exception &e){
+                    net.fazer_postagem(net.get_user());
+                    cout<<" "<<endl;
+                    cout<<" "<<endl;
+                    op++;
+                }
+                catch(NomeInvalido &e){
                     cout<<"Erro! "<<e.what()<<endl;
                 }
+                catch(condicaoInvalida &e){
+                    cout<<"Erro! "<<e.what()<<endl;
+                }
+                catch(anoInvalido &e){
+                    cout<<"Erro! "<<e.what()<<endl;
+                }
+                catch(valorInvalido &e){
+                    cout<<"Erro! "<<e.what()<<endl;
+                }
+
             }while(op == 0);
         }
 
