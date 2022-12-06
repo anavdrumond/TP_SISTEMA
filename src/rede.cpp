@@ -1,6 +1,10 @@
 #include<iostream>
+#include <sstream>
+#include <stdexcept>
 #include"rede.hpp"
 #include"usuario.hpp"
+
+
 
 Rede::Rede(Usuario perfil_){
     perfil = perfil_;
@@ -29,42 +33,49 @@ void Rede::fazer_postagem(Usuario us){
     std::string autor_l;
     std::cin>>autor_l;
         if(autor_l == " "){
-        throw NomeInvalido(autor_l);
-    }
+            throw NomeInvalido(autor_l);
+        }
 
     std::cout<<"Qual a editora ?"<<std::endl;
     std::string editora_l;
     std::cin>>editora_l;
         if(editora_l == " "){
-        throw NomeInvalido(editora_l);
-    }
+            throw NomeInvalido(editora_l);
+        }
 
     std::cout<<"O livro é novo ou usado ?"<<std::endl;
     std::string condicao_l;
     std::cin>>condicao_l;
-        if(condicao_l != "novo" || condicao_l != "usado"){
-            //throw 
+        if(condicao_l != "novo" || condicao_l != "NOVO" || condicao_l != "Novo"
+        || condicao_l != "usado" || condicao_l != "USADO" || condicao_l != "Usado"){
+            throw condicaoInvalida(condicao_l);
         } 
 
-    std::cout<<"Qual ano de lançamento ?"<<std::endl;
+    std::cout<<"Qual ano de lançamento ?"<<std::endl;  //VER ERRO CASO NAO SEJA UM INTEIRO
     int ano_l;
     std::cin>>ano_l;
+        if(ano_l < 1000 || ano_l > 2023 ){
+            throw anoInvalido(ano_l);
+        }
 
     std::string apelido_us = us.get_idusuario();
 
-    std::cout<<"de uma descrição:"<<std::endl;
+    std::cout<<"De uma descrição:"<<std::endl;
     std::string descricao_post;
     std::cin>>descricao_post;
 
     std::cout<<"Qual o preço do livro?"<<std::endl;
     float valor_livro;
     std::cin>>valor_livro;
-
+        if(valor_livro<=0){
+            throw valorInvalido(valor_livro);
+        }
+   
     std::cout<<"Qual a categoria do livro?"<<std::endl;
     std::string _categ;
     std::cin>>_categ;
 
-    std::cout<<"qual o nome da postagem ?"<<std::endl;
+    std::cout<<"Qual o nome da postagem ?"<<std::endl;
     std::string name_post;
     std::cin>>name_post;
 
@@ -101,12 +112,3 @@ void Rede::compra_moeda(Usuario us){
     us.modifica_carteira(dinheiro, esc);
 }
 
-NomeInvalido::NomeInvalido(std::string titulo){
-    _titulo = titulo;
-    mensagem = "Digite um nome válido!";
-}
-const char* NomeInvalido::what() const noexcept{
-    const char* men;
-    men = &mensagem[0];
-    return men;
-}
