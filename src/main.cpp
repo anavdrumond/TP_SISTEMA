@@ -3,6 +3,7 @@
 #include "transacao.hpp"
 #include "venda.hpp"
 #include "troca.hpp"
+#include <fstream>
 
 using namespace std;
 

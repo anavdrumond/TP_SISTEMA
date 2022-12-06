@@ -30,7 +30,7 @@ class Postagem{
     float preco;
 
     public:
-    Postagem()=default;
+    Postagem() = default;
     Postagem(std::string apelido_, std::string descricao_, float preco_, std::string _cat,std::string name_p);
 
     void set_livro(Livro l);
