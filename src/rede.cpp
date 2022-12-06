@@ -72,72 +72,7 @@ Rede::Rede(int cod_){
 Usuario Rede::get_user(){
     return perfil;
 }
-void Rede::preenche_postagem(){
-    std::ifstream arqpost;
-    std::string linha;
-    char f = '.';
-    arqpost.open("postagens.txt");
-    if(arqpost.is_open()){
-        while(getline(arqpost,linha,f)){
 
-        }
-    }
-    else{
-        std::cout<<"nao foi possivel abrir o arquivo"<<std::endl;
-    }
-
-        std::cout << "qual o seu email " << std::endl;
-        std::cin >> emailc;
-
-        std::cout << "escolha uma sua senha " << std::endl;
-        std::cin >> senhac;
-
-        std::cout << "Qual e o seu nome ?" << std::endl;
-        std::cin >> nomec;
-
-        std::cout << "Digite o seu telefone " << std::endl;
-        std::cin >> telefonec;
-
-        std::cout << "Digite o nome da sua cidade " << std::endl;
-        std::cin >> cidadec;
-
-        std::cout << "Qual é a sua Unidade Federativa ?" <<std::endl;
-        std::cin >> ufc;
-
-        std::cout << "Qual deve ser o seu nome de usuário ?" <<std::endl;
-        std::cin >> idUsuarioc;
-                
-
-        //std::string _nome, std::string _telefone, std::string _email, std::string _idUsuario, float _carteira, std::string _senha
-        Usuario user = Usuario(nomec,telefonec,emailc,idUsuarioc,carteirac,senhac);
-        perfis.push_back(user);
-        perfil = user;
-    }
-    else{
-        std::string emai;
-        std::string senh;
-
-        std::cout << "qual o seu email " << std::endl;
-        std::cin >> emai;
-
-        std::cout << "escolha uma sua senha " << std::endl;
-        std::cin >> senh;
-        for(int i = 0;i < perfis.size();i++){
-            if(perfis[i].get_senha() == senh && perfis[i].get_email() == emai){
-                perfil = perfis[i];
-            }
-        }
-
-    }
-
-}
-Rede::Rede(int cod_){
-    cod = cod_;
-}
-
-Usuario Rede::get_user(){
-    return perfil;
-}
 void Rede::preenche_postagem(){
     std::ifstream arqpost;
     std::string linha;
