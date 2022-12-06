@@ -21,7 +21,8 @@ class Troca:public Transacao {
     public:
     void modifica_status() override;
     std::string operacao(Usuario u) override;
-    Troca();
+    void set_post(Postagem pop) override;
+    Troca(Postagem p);
 };
 
 //COLOCAR ENDEREÇO

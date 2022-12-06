@@ -3,7 +3,7 @@
 #include "postagem.hpp"
 
 
-void Transacao::set_post(Postagem p){
+Transacao::Transacao(Postagem p){
     postag = Postagem(p.get_apelido(),p.get_descricao(),p.get_preco(),p.get_categoria(),p.get_nome_post());
     postag.set_livro(p.get_livro());
 }

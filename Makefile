@@ -31,7 +31,6 @@ venda: transacao usuario
 
 main: endereco livro postagem rede troca usuario venda
 	$(CC) $(FLAGS) $(BUILDDIR)/*.o  $(SRCDIR)/main.cpp -o $(BUILDDIR)/main
-	@chmod a+x $(BUILDDIR)/main
 
 clean:
 	rm -r $(BUILDDIR)/*

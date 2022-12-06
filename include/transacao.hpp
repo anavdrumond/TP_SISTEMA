@@ -25,8 +25,8 @@ class Transacao{
     virtual void modifica_status() = 0;
     virtual std::string operacao(Usuario u) = 0;
 
-    void set_post(Postagem p);
+    virtual void set_post(Postagem p) = 0;
     std::string status = "Disponivel para: troca / venda";
     std::string get_status();
-    Transacao();
+    Transacao(Postagem p);
 };

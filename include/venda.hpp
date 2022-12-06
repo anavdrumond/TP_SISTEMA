@@ -20,5 +20,6 @@ class Venda:public Transacao {
     public:
     void modifica_status() override;
     std::string operacao(Usuario u) override;
-    Venda();
+    void set_post(Postagem pop) override;
+    Venda(Postagem p);
 };

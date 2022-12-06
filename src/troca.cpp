@@ -1,9 +1,11 @@
 #include <iostream>
 #include "transacao.hpp"
 #include "troca.hpp"
-Troca::Troca(Postagem p):Transacao()
+#include "postagem.hpp"
+
+Troca::Troca(Postagem p):Transacao(p)
 {
- 
+    
 }
 
 void Troca::modifica_status(){
@@ -21,4 +23,9 @@ std::string Troca::operacao(Usuario u){
         }
     }
     std::cout<<"Troca solicitada com sucesso! Entre em contato com este usuário para realizar a troca."<<std::endl;
+}
+
+void Troca::set_post(Postagem pop){
+    postag = Postagem(pop.get_apelido(),pop.get_descricao(),pop.get_preco(),pop.get_categoria(),pop.get_nome_post());
+    postag.set_livro(pop.get_livro());
 }
