@@ -85,7 +85,7 @@ class Rede{
  */
 class NomeInvalido: public std::exception {
     std::string _titulo;
-    std::string mensagem;
+    std::string mensagem_nome;
 
 public:
     NomeInvalido(std::string titulo);
@@ -94,8 +94,28 @@ public:
 };
 
 class condicaoInvalida: public std::exception{
-    std::string cond;
+    std::string _cond;
+    std::string mensagem_cond;
+
 public:
     condicaoInvalida(std::string cond);
+    const char* what() const noexcept;
+};
+
+class anoInvalido: public std::exception{
+    int _ano;
+    std::string mensagem_ano;
+
+public:
+    anoInvalido(int ano);
+    const char* what() const noexcept;
+};
+
+class valorInvalido: public std::exception{
+    float _valor;
+    std::string mensagem_valor;
+
+public:
+    valorInvalido(float valor);
     const char* what() const noexcept;
 };
