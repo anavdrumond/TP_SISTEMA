@@ -198,3 +198,46 @@ void Rede::compra_moeda(Usuario us){
     us.modifica_carteira(dinheiro, esc);
 }
 
+NomeInvalido::NomeInvalido(std::string titulo){
+    _titulo = titulo;
+    mensagem_nome = "Digite um nome válido!";
+
+}
+const char* NomeInvalido::what() const noexcept{
+    const char* msg;
+    msg = &mensagem_nome[0];
+    return msg;
+}
+
+condicaoInvalida::condicaoInvalida(std::string cond){
+    _cond = cond;
+    mensagem_cond = "Digite 'novo' ou 'usado'. ";
+}
+
+const char* condicaoInvalida::what() const noexcept{
+    const char* msg2;
+    msg2 = &mensagem_cond[0];
+    return msg2;
+}
+
+anoInvalido::anoInvalido(int ano){
+    _ano = ano;
+    mensagem_ano = "Digite um ano válido!";
+}
+
+const char* anoInvalido::what() const noexcept{
+    const char* msg3;
+    msg3 = &mensagem_ano[0];
+    return msg3;
+}
+
+valorInvalido::valorInvalido(float valor){
+    _valor = valor;
+    mensagem_valor = "Digite um valor válido!";
+}
+
+const char* valorInvalido::what() const noexcept{
+    const char* msg4;
+    msg4 = &mensagem_valor[0];
+    return msg4;
+}
