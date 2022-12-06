@@ -14,24 +14,85 @@
 #include"usuario.hpp"
 
 /**
- * @brief Classe responsável pela manutenção do programa.
+ * @brief Classe responsável por funcionalidas gerais do sistema.
+ * 
+ * @details Armazena as postagens e usuários em vector. É responsável por funcinalidades básicas do programa como a postagem, geridas pelas funções fazer_postagem() e deleta_postagem(),
+ * além de instanciar a compra de moedas e pesquisa de pessoas cadastradas.
+ * 
  */
 class Rede{
     private:
+
+    /**
+    * @brief váriavel do tipo usuário.
+    */
     Usuario perfil;
+
+    /**
+     * @brief Vector de postagem.
+     */
     std::vector <Postagem> postagens;
+
+    /**
+     * @brief Vector de usuário.
+     */
     std::vector <Usuario> perfis;
 
     public:
+    /**
+     * @brief Construtor de rede.
+     * 
+     * @details Constrói o objeto rede com um parametro do tipo Usuario.
+     *
+     */
     Rede(Usuario perfil_);
+
+    /**
+     * @brief Deleta postagens.
+     * 
+     * @details Busca entre as postagens do usuário aquela que ele deseja apagar e a exclui do sistema.
+     */
     void deleta_postagem(Usuario us, std::string postagem_apagar);
+
+    /**
+     * @brief Realiza postagem.
+     * 
+     * @details Recebendo um parâmetro de tipo usuario, a função solicita informações do livro e realiza sua postagem.
+     * 
+     */
     void fazer_postagem(Usuario us);
+    
+    /**
+     * @brief Busca postagem por título.
+     * 
+     * @details A função busca no vector de postagens aquela com o nome correspondente a digitada pelo usuário. 
+     */
     Postagem pesquisa_postagem(std::string livro_pesquisar);
+
+    /**
+     * @brief Busca usuário.
+     * 
+     * @details No vector de usuários cadastrados, é buscado aquele com apelido correspondente.
+     * 
+     */
     void pesquisa_usuario(std::string apelido_pesquisar);
+
+    /**
+     * @brief Instancia a compra de moedas
+     * 
+     * @details Com um parâmetro do tipo usuario, a função realiza o resgate de moedas e atualiza so saldo da carteira.
+     * 
+     */
     void compra_moeda(Usuario us);
 
 };
 
+/**
+ * @brief Classe responsável por entradas inválidas
+ * 
+ * @details Garante que o usuário digite o que é pedido e permitido pelo sistema.
+ * 
+ */
 class NomeInvalido: public std::exception {
     std::string _titulo;
     std::string mensagem;

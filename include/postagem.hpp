@@ -16,6 +16,9 @@
 
 /**
  * @brief Armazena os livros postados pelo usuário.
+ * 
+ * @details Responsável pela principal funcionalidade do sistema. Com os informações fornecidas pela classe livro,
+ * o usuário é capaz de postar e pesquisar por materias de seu interesse.
  */
 class Postagem{
     private:
