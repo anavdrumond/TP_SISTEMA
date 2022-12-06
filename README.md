@@ -9,3 +9,4 @@ As compras serão feitas com moedas internas do sistema que serão armazenadas n
 Após a compilação e criação do arquivo executável, dentro do arquivo.exe será aberta um menu que solicitará entrdas que podem ser caracteres, strings, inteiros ou floats. As diferentes áreas do sistema serão acessadas a partir das diferentes entradas do usuário.
 
 Link para o user stories e para o diagrama de classes : 
+https://docs.google.com/document/d/131uAJrvWE533devoOk3HfDlDqewzZ5nYsCwW8h_2qoU/edit#
