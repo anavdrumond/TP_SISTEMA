@@ -43,6 +43,12 @@ class Troca:public Transacao {
      *
      */
     void set_post(Postagem pop) override;
+
+    /**
+     * @brief Construtor de troca.
+     * 
+     * @details Recebe como parâmetro a postagem colocada à troca.
+     */
     Troca(Postagem p);
 };
 

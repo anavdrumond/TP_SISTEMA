@@ -56,7 +56,7 @@ class Usuario {
         float carteira; 
         
         /**
-        * @brief instanciando endereço do tipo endereco. A variável recebe
+        * @brief instanciando variável do tipo endereco. A variável recebe
         * a cidade e UF cadastrados pelo usuario.
         */
         Endereco endereco;
@@ -73,7 +73,9 @@ class Usuario {
         Usuario(std::string _nome, std::string _telefone, std::string _email, std::string _idUsuario, float _carteira, std::string _senha);
 
         /**
-        * @brief conjunto de posts de um usuario, que armazena os nomes dos posts apenas.
+        * @brief Conjunto de postagens de um usuario.
+        * 
+        * @details Vector responsável por armazenar as postagens realizadas pelo usuário a partir do nome escolhido.
         */
         std::vector <std::string> conj_post;
 
