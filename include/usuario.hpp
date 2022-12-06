@@ -90,6 +90,8 @@ class Usuario {
         * @brief Funçao criada para armazenar o id do usuario.
         */
         std::string get_idusuario();
+        std::string get_senha();
+        std::string get_email();
 
         /**
         * @brief Funçao criada para modificar o saldo na carteira do usuario,

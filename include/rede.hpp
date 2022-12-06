@@ -11,6 +11,7 @@
  */
 
 #include<iostream>
+#include<fstream>
 #include"usuario.hpp"
 
 /**
@@ -22,10 +23,7 @@
  */
 class Rede{
     private:
-
-    /**
-    * @brief váriavel do tipo usuário.
-    */
+    int cod;
     Usuario perfil;
 
     /**
@@ -39,19 +37,11 @@ class Rede{
     std::vector <Usuario> perfis;
 
     public:
-    /**
-     * @brief Construtor de rede.
-     * 
-     * @details Constrói o objeto rede com um parametro do tipo Usuario.
-     *
-     */
-    Rede(Usuario perfil_);
-
-    /**
-     * @brief Deleta postagens.
-     * 
-     * @details Busca entre as postagens do usuário aquela que ele deseja apagar e a exclui do sistema.
-     */
+    Rede(int cod_);
+    void fazer_cadastro(char esc);
+    Usuario get_user();
+    void preenche_postagem(std::ifstream arqpost);
+    void preenche_user(std::ifstream arquser);
     void deleta_postagem(Usuario us, std::string postagem_apagar);
 
     /**

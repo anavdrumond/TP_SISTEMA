@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <string>
+#include <locale>
 #pragma once 
 
 /**
@@ -21,7 +22,6 @@
  * @details Recebe as variáveis relacionados ao endereço do usuário a partir de funções gets.
  * Essas informações serão usadas para o cadastro na plataforma.
  */
-
 class Endereco {
     public:
     /**
@@ -46,6 +46,8 @@ class Endereco {
      * 
      * @details Recebe como parametros cidade e uf,     
      * que serão preenchidas pelo usuario.
+     * 
+     * @param 
     */
     Endereco(std::string _cidade, std::string _uf);
 

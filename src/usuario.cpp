@@ -31,6 +31,14 @@ std::string Usuario::get_idusuario(){
     return idUsuario;
 }
 
+std::string Usuario::get_senha(){
+    return senha;
+}
+
+std::string Usuario::get_email(){
+    return email;
+}
+
 void Usuario::mostra_usuario(){
     std::cout<<nome<<std::endl;
     std::cout<<telefone<<std::endl;
