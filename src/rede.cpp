@@ -1,6 +1,8 @@
-#include<iostream>
+#include <iostream>
 #include <sstream>
+#include <string>
 #include <stdexcept>
+#include <set>
 #include"rede.hpp"
 #include"usuario.hpp"
 #include<string.h>
@@ -17,10 +19,11 @@ void Rede::fazer_cadastro(char esc){
         std::string idUsuarioc;
         float carteirac = 0;
 
-        std::cout << "qual o seu email " << std::endl;
+        std::cout << "Qual o seu email? " << std::endl;
         std::cin >> emailc;
+        //for(int 1-0; i)
 
-        std::cout << "escolha uma sua senha " << std::endl;
+        std::cout << "Escolha uma sua senha " << std::endl;
         std::cin >> senhac;
 
         std::cout << "Qual e o seu nome ?" << std::endl;
@@ -69,6 +72,7 @@ Rede::Rede(int cod_){
 Usuario Rede::get_user(){
     return perfil;
 }
+
 void Rede::preenche_postagem(){
     std::ifstream arqpost;
     std::string linha;
@@ -132,34 +136,37 @@ void Rede::deleta_postagem(Usuario us, std::string postagem_apagar){
 }
 
 void Rede::fazer_postagem(Usuario us){
+    std::string autor_l;
     std::cout<<"Queremos saber mais sobre o livro..."<<std::endl;
 
     std::cout<<"Qual o nome do livro ?"<<std::endl;
     std::string obra_l;
     std::cin>>obra_l;
-    if(obra_l == " "){
+    if(obra_l == ""){
         throw NomeInvalido(obra_l);
     }
 
-    std::cout<<"Qual o autor ou autora ?"<<std::endl;
-    std::string autor_l;
-    std::cin>>autor_l;
-        if(autor_l == " "){
+    while(true){
+        std::cout<<"Qual o autor ou autora ?"<<std::endl;
+        std::cin>>autor_l;
+        if(autor_l == "a"){
             throw NomeInvalido(autor_l);
-        }
+        }else
+            break;
+    };
 
     std::cout<<"Qual a editora ?"<<std::endl;
     std::string editora_l;
     std::cin>>editora_l;
-        if(editora_l == " "){
+        if(editora_l == "a"){
             throw NomeInvalido(editora_l);
         }
 
     std::cout<<"O livro é novo ou usado ?"<<std::endl;
     std::string condicao_l;
     std::cin>>condicao_l;
-        if(condicao_l != "novo" || condicao_l != "NOVO" || condicao_l != "Novo"
-        || condicao_l != "usado" || condicao_l != "USADO" || condicao_l != "Usado"){
+        if(condicao_l != "novo" && condicao_l != "NOVO" && condicao_l != "Novo"
+        && condicao_l != "usado" && condicao_l != "USADO" && condicao_l != "Usado"){
             throw condicaoInvalida(condicao_l);
         } 
 
