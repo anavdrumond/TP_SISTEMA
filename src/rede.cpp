@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include"rede.hpp"
 #include"usuario.hpp"
+#include<string.h>
 
 
 void Rede::fazer_cadastro(char esc){
@@ -71,10 +72,33 @@ Usuario Rede::get_user(){
 void Rede::preenche_postagem(){
     std::ifstream arqpost;
     std::string linha;
+    char *word;
     char f = '.';
+    Postagem pote;
     arqpost.open("postagens.txt");
     if(arqpost.is_open()){
         while(getline(arqpost,linha,f)){
+            char* char_arr;
+            char_arr = &linha[0];
+            for(int i = 0;i < 2;i++){
+                if(i == 0){
+                    word = strtok(char_arr," ");
+                    std::string s = word;
+                    pote.set_apelido(s);
+                }
+                if(i == 0){
+                    std::string s1 = word;
+                    word = strtok(char_arr," ");
+                    pote.set_descri(s1);
+                }
+                if(i == 0){
+                    std::string s2 = word;
+                    word = strtok(char_arr," ");
+                    pote.set_nome_post(s2);
+                    
+                }
+            }
+            postagens.push_back(pote);
 
         }
     }

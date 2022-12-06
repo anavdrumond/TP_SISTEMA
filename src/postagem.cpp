@@ -36,6 +36,25 @@ float Postagem::get_preco(){
     return preco;
 }
 
+
+void Postagem::set_categoria(std::string cato){
+    categoria = cato;
+}
+void Postagem::set_nome_post(std::string posname){
+    nome_post = posname;
+}
+void Postagem::set_apelido(std::string apel){
+    apelido = apel;
+}
+void Postagem::set_descri(std::string desc){
+    descricao = desc;
+}
+void Postagem::set_preco(float val){
+    preco = val;
+}
+
+
+
 void Postagem::mostra_postagem(){
     std::cout<<apelido<<std::endl;
     std::cout<<descricao<<std::endl;

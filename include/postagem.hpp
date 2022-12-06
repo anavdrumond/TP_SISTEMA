@@ -42,6 +42,12 @@ class Postagem{
     Livro get_livro();
     float get_preco();
 
+    void set_categoria(std::string cato);
+    void set_nome_post(std::string posname);
+    void set_apelido(std::string apel);
+    void set_descri(std::string desc);
+    void set_preco(float val);
+
 /**
  * @brief exibe as postagens realizadas.
  */

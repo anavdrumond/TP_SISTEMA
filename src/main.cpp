@@ -1,9 +1,12 @@
 #include <iostream>
+#include <fstream>
+#include <locale>
 #include "rede.hpp"
 #include "transacao.hpp"
 #include "venda.hpp"
 #include "troca.hpp"
-#include <fstream>
+
+
 
 using namespace std;
 
