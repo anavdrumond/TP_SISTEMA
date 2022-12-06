@@ -15,7 +15,10 @@
 #pragma once
 
 /**
- * @brief Armazena os dados de um livro, os quais aparecerão em postagem.
+ * @brief Armazena os dados de um livro
+ * 
+ * @details Os dados são coletados a partir de funções gets. Essas informações serão usadas na classe postagem posteriormente.
+ * 
  */
 class Livro{
     private:
