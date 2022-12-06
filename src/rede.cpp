@@ -21,7 +21,16 @@ void Rede::fazer_cadastro(char esc){
 
         std::cout << "Qual o seu email? " << std::endl;
         std::cin >> emailc;
-        //for(int 1-0; i)
+        int tamanho = sizeof(emailc);
+        int count = 0;
+        for(int i=0; i<tamanho; i++){
+            if(emailc[i] = '@'){
+                count++;
+            }
+        }
+        if(count == 0 || count > 1){
+            throw emailInvalido(emailc);
+        }
 
         std::cout << "Escolha uma sua senha " << std::endl;
         std::cin >> senhac;
@@ -273,4 +282,15 @@ const char* valorInvalido::what() const noexcept{
     const char* msg4;
     msg4 = &mensagem_valor[0];
     return msg4;
+}
+
+emailInvalido::emailInvalido(std::string mail){
+    _mail = mail;
+    mensagem_email = "Digite um email válido!";
+}
+
+const char* emailInvalido::what() const noexcept{
+    const char* msg5;
+    msg5 = &mensagem_email[0];
+    return msg5;
 }
