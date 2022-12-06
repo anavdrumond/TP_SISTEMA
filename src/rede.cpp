@@ -68,7 +68,8 @@ Rede::Rede(int cod_){
 Usuario Rede::get_user(){
     return perfil;
 }
-void Rede::preenche_postagem(std::ifstream arqpost){
+void Rede::preenche_postagem(){
+    std::ifstream arqpost;
     std::string linha;
     char f = '.';
     arqpost.open("postagens.txt");
@@ -82,7 +83,8 @@ void Rede::preenche_postagem(std::ifstream arqpost){
     }
 
 }
-void Rede::preenche_user(std::ifstream arquser){
+void Rede::preenche_user(){
+    std::ifstream arquser;
     std::string linha1;
     char fi = '.';
     arquser.open("usuarios.txt");

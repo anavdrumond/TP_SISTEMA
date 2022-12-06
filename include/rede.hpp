@@ -40,8 +40,8 @@ class Rede{
     Rede(int cod_);
     void fazer_cadastro(char esc);
     Usuario get_user();
-    void preenche_postagem(std::ifstream arqpost);
-    void preenche_user(std::ifstream arquser);
+    void preenche_postagem();
+    void preenche_user();
     void deleta_postagem(Usuario us, std::string postagem_apagar);
 
     /**
