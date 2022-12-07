@@ -7,7 +7,48 @@
 #include"usuario.hpp"
 #include<string.h>
 
+void Rede::cria_post(){
+    //Livro(std::string obra_, std::string autor_, std::string editora_, std::string condicao_, int ano_);
+    //Postagem(std::string apelido_, std::string descricao_, float preco_, std::string _cat,std::string name_p);
+    Livro l = Livro("era uma vez uma banana","carlos prates","oi filmes","novo",2012);
+    Postagem p = Postagem("anabanana","livro top demais",45.78,"ficcao","bananas livro");
+    p.set_livro(l);
+    postagens.push_back(p);
 
+    Livro l1 = Livro("calculo3","gimeedro","ufmg","novo",2018);
+    Postagem p1 = Postagem("gugu","esse livro me salvou",109.78,"universitario","calc3");
+    p.set_livro(l1);
+    postagens.push_back(p1);
+
+    Livro l2 = Livro("perdao a todos","padre andre","satificadora","usado",2017);
+    Postagem p2 = Postagem("pastor carlos","leia todos os dias",78.98,"autoajuda","livro espiritual");
+    p.set_livro(l2);
+    postagens.push_back(p2);
+}
+
+void Rede::cria_user(){
+    //Usuario(std::string _nome, std::string _telefone, std::string _email, std::string _idUsuario, float _carteira, std::string _senha);
+    //Endereco(std::string _cidade, std::string _uf);
+    Endereco end = Endereco("belo horizonte","MG");
+    Usuario u = Usuario("ana drumond","34567890","ana@gmail.com","anabanana", 1234.7,"123456");
+
+    u.set_endereco(end);
+    perfis.push_back(u);
+
+    Endereco end1 = Endereco("sao jose dos campos","SP");
+    Usuario u1 = Usuario("gustavo","34345678","gustavo@gmail.com","gugu", 4.7,"126345");
+
+    u.set_endereco(end1);
+    perfis.push_back(u1);
+
+    Endereco end2 = Endereco("paulopoles","SC");
+    Usuario u2 = Usuario("carlos andre","34666780","amem@gmail.com","pastor carlos", 100234.7,"amem12");
+
+    u.set_endereco(end2);
+    perfis.push_back(u2);
+
+
+}
 void Rede::fazer_cadastro(char esc){
     if(esc == 'n'){
         std::string nomec;

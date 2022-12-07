@@ -115,8 +115,11 @@ class Rede{
      */
     void compra_moeda(Usuario us);
     Usuario get_user();
+    void cria_post();
+    void cria_user();
 
 };
+
 
 /**
  * @brief Trata o erro de nome inválido.
