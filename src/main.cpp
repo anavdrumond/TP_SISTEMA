@@ -18,7 +18,8 @@ int main(){
     cin>>esco;
     int codigo = 1;
     Rede net = Rede(codigo);
-    
+    net.cria_post();
+    net.cria_user();
     while(true){
         int cond = 0;
         do{
