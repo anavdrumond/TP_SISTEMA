@@ -4,8 +4,8 @@
  * @brief Classe Transacao
  * @version 1.0
  * @date 2022-11-20
- * @details A classe endereco é responsável por armazenar a cidade e o estado
- * do usuário, os quais aparecerão nas postagens e no usuário.
+ * @details A classe transacao é uma classe mãe que funciona como interface para
+ * a implementação das classes troca e venda.
  *
  * @copyright GNU General Public License v2.0
  * 
