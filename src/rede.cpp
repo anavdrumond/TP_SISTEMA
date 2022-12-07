@@ -19,21 +19,29 @@ void Rede::fazer_cadastro(char esc){
         std::string idUsuarioc;
         float carteirac = 0;
 
+        
         std::cout << "Qual o seu email? " << std::endl;
         std::cin >> emailc;
-        int tamanho = sizeof(emailc);
+        int tamanho = 25;
         int count = 0;
-        for(int i=0; i<tamanho; i++){
+        for(int i=0; i<=tamanho; i++){
             if(emailc[i] = '@'){
                 count++;
+                break;
             }
         }
-        if(count == 0 || count > 1){
+        if(count == 0){
             throw emailInvalido(emailc);
         }
 
-        std::cout << "Escolha uma sua senha " << std::endl;
-        std::cin >> senhac;
+        do{
+            std::cout << "Escolha uma senha de 6 digitos " << std::endl;
+            std::cin >> senhac;
+            int tam = senhac.size();
+            if(tam != 6){
+                throw senhaInvalida(senhac);
+            }    
+        }while(true);
 
         std::cout << "Qual e o seu nome ?" << std::endl;
         std::cin >> nomec;
@@ -44,10 +52,10 @@ void Rede::fazer_cadastro(char esc){
         std::cout << "Digite o nome da sua cidade " << std::endl;
         std::cin >> cidadec;
 
-        std::cout << "Qual é a sua Unidade Federativa ?" <<std::endl;
+        std::cout << "Qual a sua Unidade Federativa ?" <<std::endl;
         std::cin >> ufc;
 
-        std::cout << "Qual deve ser o seu nome de usuário ?" <<std::endl;
+        std::cout << "Qual deve ser o seu nome de usaário ?" <<std::endl;
         std::cin >> idUsuarioc;
                 
 
@@ -60,10 +68,10 @@ void Rede::fazer_cadastro(char esc){
         std::string emai;
         std::string senh;
 
-        std::cout << "qual o seu email " << std::endl;
+        std::cout << "Qual o seu email registrado? " << std::endl;
         std::cin >> emai;
 
-        std::cout << "escolha uma sua senha " << std::endl;
+        std::cout << "Digite sua senha: " << std::endl;
         std::cin >> senh;
         for(int i = 0;i < perfis.size();i++){
             if(perfis[i].get_senha() == senh && perfis[i].get_email() == emai){
@@ -240,6 +248,7 @@ void Rede::compra_moeda(Usuario us){
     us.modifica_carteira(dinheiro, esc);
 }
 
+//----Lançamento de Erros------
 NomeInvalido::NomeInvalido(std::string titulo){
     _titulo = titulo;
     mensagem_nome = "Digite um nome válido!";
@@ -293,4 +302,15 @@ const char* emailInvalido::what() const noexcept{
     const char* msg5;
     msg5 = &mensagem_email[0];
     return msg5;
+}
+
+senhaInvalida::senhaInvalida(std::string sen){
+    _sen = sen;
+    mensagem_senha = "Digite uma senha de 6 dígitos!";
+
+}
+const char* senhaInvalida::what() const noexcept{
+    const char* msg6;
+    msg6 = &mensagem_senha[0];
+    return msg6;
 }
