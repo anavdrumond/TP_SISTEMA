@@ -53,7 +53,7 @@ class Rede{
      * 
      * @details Reliza o cadasto do usuário a partir de 
      * parâmetros fornecidos por ele. A função recebe esses
-     * parâmetros e armazená-os no sistema.
+     * parâmetros e armazena-os no sistema.
      */
     void fazer_cadastro(char esc);
 
