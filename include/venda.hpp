@@ -1,11 +1,11 @@
 /**
- * @file intruso.hpp
+ * @file venda.hpp
  * @author Ana Vitoria Drumond (anadrumond@ufmg.br)
  * @brief Classe Venda
  * @version 1.0
  * @date 2022-11-20
- * @details A classe endereco é responsável por armazenar a cidade e o estado
- * do usuário, os quais aparecerão nas postagens e no usuário.
+ * @details A classe venda implementa as funções de sua
+ * classe mãe e possibilita a venda de livros na plataforma.
  *
  * @copyright GNU General Public License v2.0
  * 
@@ -19,7 +19,7 @@
  * @brief Instacia a venda no sistema.
  * 
  * @details Implementa as operações necessárias para a venda de livros entre os usuários.
- * Assim, os status assim como a lógica necessário são instanciadas aqui.
+ * Desse modo, os status assim como a lógica necessário são instanciadas aqui.
  */
 class Venda:public Transacao {
 
