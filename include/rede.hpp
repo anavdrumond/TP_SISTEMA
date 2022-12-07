@@ -83,3 +83,21 @@ public:
     emailInvalido(std::string mail);
     const char* what() const noexcept;
 };
+
+class senhaInvalida: public std::exception{
+    std::string _sen;
+    std::string mensagem_senha;
+
+public:
+    senhaInvalida(std::string sen);
+    const char* what() const noexcept;
+};
+
+class estadoInvalido: public std::exception{
+    std::string _est;
+    std::string mensagem_estado;
+
+public:
+    estadoInvalido(std::string est);
+    const char* what() const noexcept;
+};

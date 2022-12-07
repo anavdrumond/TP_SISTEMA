@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <locale>
+#include <locale.h>
 #include "rede.hpp"
 #include "transacao.hpp"
 #include "venda.hpp"
@@ -11,20 +11,37 @@
 using namespace std;
 
 int main(){
-    cout << "Bem-vindo(a) à Biblioteca virtual"<< endl;
-    cout << "voce ja possui cadastro:"<< endl;
+    cout << "Bem-vindo(a) a Biblioteca Virtual!! "<< endl;
+    cout<<""<<endl;
+    cout << "Voce ja possui cadastro? (n ou s)"<< endl;
     char esco;
     cin>>esco;
     int codigo = 1;
     Rede net = Rede(codigo);
-    net.fazer_cadastro(esco);
+    
     while(true){
+        int cond = 0;
+        do{
+            try{
+                net.fazer_cadastro(esco);
+                cond++;
+            }
+            catch(emailInvalido &e){
+                cout<<"Erro! "<<e.what()<<endl;
+            }
+            catch(senhaInvalida &e){
+                cout<<"Erro! "<<e.what()<<endl;
+            }
+
+        }while(cond == 0);
+
         cout << "- MENU DE OPCOES - : " << endl;
-        cout << "Se deseja procurar um usuário, digite u" << endl;
+        cout<<""<<endl;
+        cout << "Se deseja procurar um usuario, digite u" << endl;
         cout << "Se deseja procurar uma postagem, digite p" << endl;
-        cout << "Se você quer fazer uma postagem, digite n" << endl;
-        cout << "Se você quer retirar uma postagem, digite r" << endl;
-        cout << "Se você deseja acessar o seu perfil, digite e'" << endl;
+        cout << "Se voce quer fazer uma postagem, digite n" << endl;
+        cout << "Se voce quer retirar uma postagem, digite r" << endl;
+        cout << "Se voce deseja acessar o seu perfil, digite e'" << endl;
         cout << "Se deseja fechar o programa, digite x" << endl;
 
         char opcao;
@@ -34,7 +51,7 @@ int main(){
         if(opcao == 'u'){
             while(true){
                 char opcao2;
-                cout << "Buscar id do usuário: " << endl;
+                cout << "Buscar id do usuario: " << endl;
                 string name;
                 cin >> name;
                 net.pesquisa_usuario(name);

@@ -34,28 +34,43 @@ void Rede::fazer_cadastro(char esc){
             throw emailInvalido(emailc);
         }
 
-        do{
+        //{
             std::cout << "Escolha uma senha de 6 digitos " << std::endl;
             std::cin >> senhac;
             int tam = senhac.size();
             if(tam != 6){
                 throw senhaInvalida(senhac);
             }    
-        }while(true);
+        //}
 
         std::cout << "Qual e o seu nome ?" << std::endl;
         std::cin >> nomec;
+        if(nomec[0]== ' ' || nomec[0] == '\n'){
+            throw NomeInvalido(nomec);
+        }
 
         std::cout << "Digite o seu telefone " << std::endl;
         std::cin >> telefonec;
 
         std::cout << "Digite o nome da sua cidade " << std::endl;
         std::cin >> cidadec;
+        if(cidadec[0] == ' ' || cidadec[0] == '\n'){
+            throw NomeInvalido(cidadec);
+        }
 
         std::cout << "Qual a sua Unidade Federativa ?" <<std::endl;
         std::cin >> ufc;
+        std::vector<std::string> estados {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC"};
+        for(int i=0; i<27; i++){
+            if(estados[i] == ufc){
+                break;
+            }
+            if(i == 27){
+                throw estadoInvalido(ufc);
+            }
+        }
 
-        std::cout << "Qual deve ser o seu nome de usaário ?" <<std::endl;
+        std::cout << "Qual deve ser o seu nome de usario ?" <<std::endl;
         std::cin >> idUsuarioc;
                 
 
@@ -196,7 +211,7 @@ void Rede::fazer_postagem(Usuario us){
 
     std::string apelido_us = us.get_idusuario();
 
-    std::cout<<"De uma descrição:"<<std::endl;
+    std::cout<<"De uma descriçao:"<<std::endl;
     std::string descricao_post;
     std::cin>>descricao_post;
 
@@ -251,7 +266,7 @@ void Rede::compra_moeda(Usuario us){
 //----Lançamento de Erros------
 NomeInvalido::NomeInvalido(std::string titulo){
     _titulo = titulo;
-    mensagem_nome = "Digite um nome válido!";
+    mensagem_nome = "Digite um nome valido!";
 
 }
 const char* NomeInvalido::what() const noexcept{
@@ -273,7 +288,7 @@ const char* condicaoInvalida::what() const noexcept{
 
 anoInvalido::anoInvalido(int ano){
     _ano = ano;
-    mensagem_ano = "Digite um ano válido!";
+    mensagem_ano = "Digite um ano valido!";
 }
 
 const char* anoInvalido::what() const noexcept{
@@ -284,7 +299,7 @@ const char* anoInvalido::what() const noexcept{
 
 valorInvalido::valorInvalido(float valor){
     _valor = valor;
-    mensagem_valor = "Digite um valor válido!";
+    mensagem_valor = "Digite um valor valido!";
 }
 
 const char* valorInvalido::what() const noexcept{
@@ -295,7 +310,7 @@ const char* valorInvalido::what() const noexcept{
 
 emailInvalido::emailInvalido(std::string mail){
     _mail = mail;
-    mensagem_email = "Digite um email válido!";
+    mensagem_email = "Digite um email valido!";
 }
 
 const char* emailInvalido::what() const noexcept{
@@ -306,11 +321,21 @@ const char* emailInvalido::what() const noexcept{
 
 senhaInvalida::senhaInvalida(std::string sen){
     _sen = sen;
-    mensagem_senha = "Digite uma senha de 6 dígitos!";
+    mensagem_senha = "Digite uma senha de 6 digitos!";
 
 }
 const char* senhaInvalida::what() const noexcept{
     const char* msg6;
     msg6 = &mensagem_senha[0];
     return msg6;
+}
+estadoInvalido::estadoInvalido(std::string est){
+    _est = est;
+    mensagem_estado = "Digite um estado valido!";
+
+}
+const char* estadoInvalido::what() const noexcept{
+    const char* msg7;
+    msg7 = &mensagem_estado[0];
+    return msg7;
 }
